@@ -55,12 +55,15 @@ session_start();
                         
                         // TRATAMIENTO DE LA SESIÓN
                         
+                        
                         if (!isset($_SESSION["user"])) { // SI NO HAY UNA SESIÓN INICIADA EN EL BOTON PONDRA INICIAR SESION Y NOS REDIRIGE A LOGIN
 
                             echo "<a href='login.php'><input type='button' class='btn btn-success' value='INICIAR SESIÓN'/></a>";
-
-
+                            
+                            
+                             
                         }
+                        
 
                         elseif (isset($_SESSION['user']) && $_SESSION['tipo']==2) { //SI LA SESIÓN ES LA DE ADMIN CAMBIA POR BIENVENIDO ADMIN
 
@@ -69,11 +72,12 @@ session_start();
 
                         }           
 
-                        else { // SI LA SESIÓN ES LA DE UN USUARIO NORMAL TIPO1 EL BOTON CAMBIA A BIENVENIDO 'NOMBRE USUARIO'
+                        elseif (isset($_SESSION['user']) && $_SESSION['tipo']==1) { // SI LA SESIÓN ES LA DE UN USUARIO NORMAL TIPO1 EL BOTON CAMBIA A BIENVENIDO 'NOMBRE USUARIO'
 
                             echo "<input type='button' class='btn btn-success' value='BIENVENIDO {$_SESSION['user']}'/>";
 
-                        }
+                        }  
+                            
                         ?>
 
 

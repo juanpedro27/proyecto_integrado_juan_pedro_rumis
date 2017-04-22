@@ -1,7 +1,24 @@
 <?php 
 $tituloPagina = "Inicio Miscota" ;
 $pagina = "index";
-include('inc/header.php'); ?>
+include('inc/header.php'); 
+
+$file ='install.php';
+
+
+//Devuelve true
+$exists = is_file( $file );
+
+if ($exists) {
+
+header ("Location: install.php");
+
+} else {
+    
+}
+
+
+?>
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
@@ -75,6 +92,9 @@ include('inc/header.php'); ?>
     </div>
 </div>
 
-<?php include('inc/footer.php'); ?>
+<?php include('inc/footer.php'); ?>   
+
+
+
 
 
